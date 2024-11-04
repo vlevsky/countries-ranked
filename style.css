@@ -1,9 +1,38 @@
 .title-h1{
     font-weight: bold;
     text-align: center;
+    color: rgb(0, 255, 136); 
+    font-size: 35px;
+}
+.title-gdp{
+    font-weight: bold;
+    text-align: center;
     color: blue; 
+    font-size: 35px;
 }
 
 .subheading{
-    
+    font-weight: bold;
+    text-align: center;
+    color: rgb(1, 196, 105);  
+}
+
+.paragraph{
+    font-weight: bold;
+    text-align: center;
+    color: black; 
+}
+
+.page-options{
+
+}
+
+.page-hyperlinks{
+    font-weight: bolder;
+    font-size: 20px;
+    text-align: center;
+}
+
+.page-styling{
+    font-family: Verdana;
 }
