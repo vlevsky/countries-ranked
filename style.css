@@ -24,7 +24,7 @@
 }
 
 .page-options{
-
+font-size: 30px;
 }
 
 .page-hyperlinks{
@@ -33,6 +33,48 @@
     text-align: center;
 }
 
-.page-styling{
+body{
     font-family: Verdana;
+    font-weight: bold;
+}
+
+.redtext{
+    color: red;
+}
+
+.bluetext{
+    color: blue;
+}
+
+.yellowtext{
+    color: yellow;
+}
+
+.whitetext{
+    color: white;
+}
+
+.greentext{
+    color: green;
+}
+
+.lightgreentext{
+    color: lightgreen;
+}
+
+.orangetext{
+    color: orange;
+}
+
+.countriesGDP{
+    background-color: rgb(51, 94, 51);
+    color: rgb(154, 219, 203);
+}
+
+.pages-list{
+    background-color: rgb(0, 174, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
 }
