@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Country Comparison Tool</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS for styling -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chart.js/3.9.1/chart.min.js"></script> <!-- Optional for charts -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .compare-form {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .compare-form select {
+            width: 48%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        .compare-form button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .compare-form button:hover {
+            background-color: #218838;
+        }
+        .charts-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        canvas {
+            width: 48% !important;
+            height: 300px !important;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Country Comparison Tool</h1>
+        <p>Select countries and compare their metrics</p>
+    </header>
+
+    <div class="container">
+        <div class="compare-form">
+            <div>
+                <label for="country1">Select Country 1:</label>
+                <select id="country1">
+                    <option value="USA">United States</option>
+                    <option value="China">China</option>
+                    <option value="India">India</option>
+                    <option value="Brazil">Brazil</option>
+                    <option value="Canada">Canada</option>
+                    <!-- Add more countries here -->
+                </select>
+            </div>
+            <div>
+                <label for="country2">Select Country 2:</label>
+                <select id="country2">
+                    <option value="USA">United States</option>
+                    <option value="China">China</option>
+                    <option value="India">India</option>
+                    <option value="Brazil">Brazil</option>
+                    <option value="Canada">Canada</option>
+                    <!-- Add more countries here -->
+                </select>
+            </div>
+            <button id="compareButton">Compare</button>
+        </div>
+
+        <div class="charts-container">
+            <canvas id="sizeChart"></canvas>
+            <canvas id="populationChart"></canvas>
+        </div>
+    </div>
+
+    <script>
+        // Sample data for demonstration (replace with actual data or API calls)
+        const countryData = {
+            "USA": { size: 9833520, population: 331000000, gdp: 21433225 },  // in square km, people, billions USD
+            "China": { size: 9596961, population: 1400000000, gdp: 14342903 },
+            "India": { size: 3287263, population: 1380004385, gdp: 2875207 },
+            "Brazil": { size: 8515767, population: 213993437, gdp: 1839758 },
+            "Canada": { size: 9984670, population: 38008005, gdp: 2000807 }
+            // Add more country data as needed
+        };
+
+        // Initialize charts
+        let sizeChart = new Chart(document.getElementById('sizeChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Country 1', 'Country 2'],
+                datasets: [{
+                    label: 'Land Size (sq km)',
+                    data: [0, 0],
+                    backgroundColor: ['#007BFF', '#28a745'],
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { stepSize: 2000000 }
+                    }
+                }
+            }
+        });
+
+        let populationChart = new Chart(document.getElementById('populationChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Country 1', 'Country 2'],
+                datasets: [{
+                    label: 'Population',
+                    data: [0, 0],
+                    backgroundColor: ['#007BFF', '#28a745'],
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { stepSize: 500000000 }
+                    }
+                }
+            }
+        });
+
+        // Event listener for the compare button
+        document.getElementById('compareButton').addEventListener('click', function() {
+            const country1 = document.getElementById('country1').value;
+            const country2 = document.getElementById('country2').value;
+
+            // Fetch data for the selected countries
+            const data1 = countryData[country1];
+            const data2 = countryData[country2];
+
+            // Update the charts with the selected country's data
+            sizeChart.data.datasets[0].data = [data1.size, data2.size];
+            populationChart.data.datasets[0].data = [data1.population, data2.population];
+
+            // Update chart labels
+            sizeChart.data.labels = [country1, country2];
+            populationChart.data.labels = [country1, country2];
+
+            // Re-render the charts
+            sizeChart.update();
+            populationChart.update();
+        });
+    </script>
+
+</body>
+</html>
