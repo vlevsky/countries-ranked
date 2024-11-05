@@ -68,13 +68,41 @@ body{
 
 .countriesGDP{
     background-color: rgb(51, 94, 51);
-    color: rgb(154, 219, 203);
+    color: rgb(194, 212, 208);
+}
+
+.countriesPopulation{
+    background-color: rgb(51, 94, 51);
+    color: rgb(194, 212, 208);
 }
 
 .pages-list{
-    background-color: rgb(0, 174, 255);
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     align-content: center;
+}
+
+.subheadingsource{
+    display: flex;
+    font-size: 9.5px;
+    justify-content: center;
+    align-content: center;
+}
+
+.gdp-list{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.homebutton{
+    display: flex;
+    color: blue;
+    font-size: 20px;
+    justify-content: center;
+    align-content: center
 }
