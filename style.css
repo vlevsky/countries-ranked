@@ -127,3 +127,14 @@ body{
     justify-content: center;
     align-content: center
 }
+
+a:hover {
+    color: #4fd6ff;
+    font-size: 28px;
+    text-decoration-style: wavy;
+  }
+  
+  a:active {
+    color: #ac8beb;
+    text-decoration-color: rgb(219, 73, 255);
+  }
