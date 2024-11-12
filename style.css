@@ -34,12 +34,16 @@ font-size: 30px;
 }
 
 .page-hyperlinks:visited {
-    color: rgb(255, 0, 212);
+    color: rgb(194, 156, 255);
 }
 
 body{
     font-family: Verdana;
     font-weight: bold;
+}
+
+.flagimgs{
+    width: 150px;
 }
 
 .redtext{
@@ -74,13 +78,32 @@ body{
     color: darkgreen;
 }
 
+.otherbuttons{
+color: rgb(255, 255, 255);
+}
+
 .countriesGDP{
     background-color: rgb(83, 17, 92);
     color: rgb(194, 212, 208);
 }
 
+.usapage{
+    background-color: rgb(23, 129, 161);
+    color: white;
+}
+
+.ukpage{
+    background-color: rgb(38, 38, 153);
+    color: rgb(255, 255, 255);
+}
+
+.francepage{
+    background-color: rgb(35, 85, 54);
+    color: rgb(255, 255, 255)
+}
+
 .countriesPopulation{
-    background-color: rgb(29, 170, 83);
+    background-color: rgb(207, 91, 188);
     color: rgb(0, 0, 0);
 }
 
@@ -90,10 +113,9 @@ body{
 }
 
 .titleindex{
-    display.flex;
     background-color: rgb(0, 119, 255);
-    text-align: center;
     color: white;
+    text-align: center;
 }
 
 .pages-list{
@@ -122,19 +144,19 @@ body{
 
 .homebutton{
     display: flex;
-    color: blue;
+    color: rgb(0, 255, 149);
     font-size: 20px;
     justify-content: center;
     align-content: center
 }
 
 a:hover {
-    color: #4fd6ff;
-    font-size: 28px;
+    color: #13a5be;
+    font-size: 26px;
     text-decoration-style: wavy;
   }
   
   a:active {
-    color: #ac8beb;
-    text-decoration-color: rgb(219, 73, 255);
+    color: #3c05a3;
+    text-decoration-color: rgb(216, 78, 250);
   }
